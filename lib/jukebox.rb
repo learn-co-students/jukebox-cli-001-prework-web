@@ -21,7 +21,7 @@ songs = [
 # puts say_hello(users_name)
 
 def run(songs)
-  puts "Please enter a command"
+  puts "Please enter a command: help, list, play, exit"
   user_input = gets.chomp.downcase
   while user_input != "exit" do  
     if user_input == "help"
@@ -33,14 +33,20 @@ def run(songs)
     elsif user_input == "list"
       list(songs)
       user_input = gets.chomp.downcase
-
     end
   end
-  exit_jukebox
+  if user_input == "exit"
+    exit_jukebox
+  end
 end
 
 def help
-  puts "help, list, play, exit"
+  #puts "help, list, play, exit"
+  puts "Please enter a command:"
+  puts "help"
+  puts "list   --lists all available songs"
+  puts "play   --choose from available songs"
+  puts "exit   --Goodbye"
 
 end
 
