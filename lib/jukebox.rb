@@ -24,10 +24,10 @@ puts say_hello(users_name)
 
 
 def help
-  puts "-help"
-  puts "-list - displays list of possible songs"
-  puts "-play - plays the song that you choose"
-  puts "-exit - exits the program"
+  puts "help"
+  puts "list - displays list of possible songs"
+  puts "play - plays the song that you choose"
+  puts "exit - exits the program"
 end
 
 def list(songs)
@@ -53,18 +53,24 @@ def exit_jukebox
 end
 
 def run(songs)
-  puts "Please enter a command (help, list, play, exit):"
-  action = gets.chomp
-  until action.downcase == "play" do 
-    if action.downcase == "play"
-    play(songs)
-    elsif action.downcase == "help"
-    help
-    elsif action.downcase == "list"
-    list(songs)
-    elsif action.downcase == "exit"
-    exit_jukebox
-  end
+  help 
+  action = ""
+  while action
+    puts "Please enter a command:"
+    action = gets.chomp.downcase.strip
+      if action == "play"
+        list(songs)
+        play(songs)
+      elsif action == "help"
+        help
+      elsif action == "list"
+        list(songs)
+      elsif action== "exit"
+        exit_jukebox
+        break
+      else
+        help
+    end
   end
 end
 
