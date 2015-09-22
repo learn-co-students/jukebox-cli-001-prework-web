@@ -1,4 +1,3 @@
-require 'pry'
 
 songs = [
   "1. Phoenix - 1901",
