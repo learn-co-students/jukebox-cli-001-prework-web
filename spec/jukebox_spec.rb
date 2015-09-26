@@ -68,13 +68,13 @@ describe "CLI Jukebox" do
   context "with commands" do
     it "responds to 'help'" do
       self.stub(:gets).and_return("exit")
-      help_output = capture_stdout { run(songs) }
+      help_output = capture_stdout { help }
       expect(help_output).to include("help" && "list" && "play" && "exit")
     end
 
     it "responds to 'exit'" do
       self.stub(:gets).and_return("exit")
-      help_output = capture_stdout { run(songs) }
+      help_output = capture_stdout { exit_jukebox }
       expect(help_output).to include("Goodbye")
     end
   end
