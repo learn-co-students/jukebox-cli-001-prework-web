@@ -17,14 +17,14 @@ def list(songs)
 end
 
 def play(songs)
-  puts "Please enter a song name or number:"
-  song_to_play = gets.chomp
-  if !songs[song_to_play.to_i]
+  puts "Please select a song:"
+  selection = gets.chomp
+  if !songs[selection.to_i]
     puts "Invalid input, please try again"
-  elsif song_to_play.to_i.to_s == song_to_play
-    puts "Playing #{songs[song_to_play.to_i - 1]}"
-  elsif songs.include?(song_to_play)
-    puts "Playing #{song_to_play}"
+  elsif selection.to_i.to_s == selection
+    puts "Playing #{songs[selection.to_i - 1]}"
+  elsif songs.include?(selection)
+    puts "Playing #{selection}"
   else 
     puts "Invalid input, please try again"
   end

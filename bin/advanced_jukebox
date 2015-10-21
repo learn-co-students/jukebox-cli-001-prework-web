@@ -1,16 +1,16 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/advanced_jukebox"
+require_relative "../lib/advanced_jukebox.rb"
 
 
 my_songs = {
-  "Go Go GO" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/01.mp3',
-  "LiberTeens" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/02.mp3',
-  "Hamburg" =>  '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/03.mp3',
-  "Guiding Light" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/04.mp3',
-  "Wolf" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/05.mp3',
-  "Blue" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/06.mp3',
-  "Graduation Failed" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/07.mp3'
+  "Go Go GO" => '/Users/matthewcostabile/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/01.mp3',
+  "LiberTeens" => '/Users/matthewcostabile/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/02.mp3',
+  "Hamburg" =>  '/Users/matthewcostabile/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/03.mp3',
+  "Guiding Light" => '/Users/matthewcostabile/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/04.mp3',
+  "Wolf" => '/Users/matthewcostabile/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/05.mp3',
+  "Blue" => '/Users/matthewcostabile/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/06.mp3',
+  "Graduation Failed" => '/Users/matthewcostabile/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/07.mp3'
 }
 
 run(my_songs)
