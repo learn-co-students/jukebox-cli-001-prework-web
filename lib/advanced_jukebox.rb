@@ -2,26 +2,33 @@
 #make sure to edit the value of each key to replace < path to this directory >
 #with the correct path to this directory on your computer
 
-# my_songs = {
-# "Go Go GO" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/01.mp3',
-# "LiberTeens" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/02.mp3',
-# "Hamburg" =>  '< path to this directory >/jukebox-cli/audio/Emerald-Park/03.mp3',
-# "Guiding Light" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/04.mp3',
-# "Wolf" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/05.mp3',
-# "Blue" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/06.mp3',
-# "Graduation Failed" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/07.mp3'
-# }
+my_songs = {
+  "Go Go GO" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/01.mp3',
+  "LiberTeens" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/02.mp3',
+  "Hamburg" =>  '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/03.mp3',
+  "Guiding Light" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/04.mp3',
+  "Wolf" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/05.mp3',
+  "Blue" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/06.mp3',
+  "Graduation Failed" => '/Users/matthewcostabile/Development/code/jukebox-cli/audio/Emerald-Park/07.mp3'
+}
 
 def help
-  #this method should be the same as in jukebox.rb
+  help = <<-HELP
+Commands:
+- help : displays this help message
+- list : displays a list of songs you can play
+- play : lets you choose a song to play
+- exit : exits this program
+HELP
 
+  puts help
 end
 
 
 
 def list(my_songs)
-  #this method is different! Collect the keys of the my_songs hash and 
-  #list the songs by name
+  my_songs.each_with_index do |key,value,index|
+    puts "#{index-1}. #{key}"
 end
 
 
@@ -41,5 +48,26 @@ def exit_jukebox
 end
 
 def run(my_songs)
-  #this method is the same as in jukebox.rb
+  puts "Enter your username"
+  x = gets.chomp
+  selection = ""
+  help
+  while selection
+    puts "Please enter a command:"
+    selection = gets.chomp
+    case selection
+    when "help" 
+      help
+    when "list"
+      list(songs)
+    when "play"
+      list(songs)
+      play(songs)
+    when "exit"
+      exit_jukebox
+      break
+    else
+      help
+    end
+  end
 end
