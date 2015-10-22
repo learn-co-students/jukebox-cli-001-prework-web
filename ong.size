@@ -1,0 +1,20 @@
+
+[1mFrom:[0m /home/nitrous/code/labs/jukebox-cli-001-prework-web/lib/jukebox.rb @ line 35 Object#play:
+
+    [1;34m34[0m: [32mdef[0m [1;34mplay[0m(song)
+ => [1;34m35[0m:   binding.pry
+    [1;34m36[0m:   [32mif[0m song.size == [1;34m1[0m && song[[1;34m0[0m].match([35m[1;35m/[0m[35m[1;35m\d[0m[35m+[1;35m/[0m[35m[0m)
+    [1;34m37[0m:     [32munless[0m songs[song.to_i].nil?
+    [1;34m38[0m:       puts songs[song.to_i]
+    [1;34m39[0m:     [32melse[0m
+    [1;34m40[0m:       puts [31m[1;31m"[0m[31mInvalid input, please try again.[1;31m"[0m[31m[0m
+    [1;34m41[0m:     [32mend[0m
+    [1;34m42[0m:   [32melse[0m
+    [1;34m43[0m:     [32mif[0m songs.include?(song)
+    [1;34m44[0m:       puts song
+    [1;34m45[0m:     [32melse[0m
+    [1;34m46[0m:       puts [31m[1;31m"[0m[31mInvalid input, please try again.[1;31m"[0m[31m[0m
+    [1;34m47[0m:     [32mend[0m
+    [1;34m48[0m:   [32mend[0m
+    [1;34m49[0m: [32mend[0m
+
