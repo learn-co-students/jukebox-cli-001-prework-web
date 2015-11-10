@@ -15,9 +15,9 @@ songs = [
 
 describe "CLI Jukebox" do
 
-  context "methods" do 
-    describe "#help" do 
-      it "lists out the possible commands" do 
+  context "methods" do
+    describe "#help" do
+      it "lists out the possible commands" do
         expect { help }.to output(/^(?=.*help)(?=.*list)(?=.*play)(?=.*exit).+/m).to_stdout
       end
     end
@@ -45,19 +45,20 @@ describe "CLI Jukebox" do
     end
 
     describe "#list" do
-      it "lists out the available songs" do  
+      it "lists out the available songs" do
         expect { list(songs) }.to output(/Phoenix - 1901/).to_stdout
       end
     end
 
-    describe "#exit_jukebox" do 
+    describe "#exit_jukebox" do
       it "terminates the running of the program and outputs 'Goodbye'" do
-        expect { exit_jukebox }.to output(/Goodbye/).to_stdout 
+        expect { exit_jukebox }.to output(/Goodbye/).to_stdout
       end
     end
 
     describe '#run' do
     it "starts the program script" do
+      self.stub(:gets).and_return("Michael")
       allow(self).to receive(:gets).and_return("exit")
       expect { run(songs) }.to output(/Please enter a command:/).to_stdout
     end
@@ -67,12 +68,15 @@ describe "CLI Jukebox" do
 
   context "with commands" do
     it "responds to 'help'" do
+      self.stub(:gets).and_return("Michael")
       self.stub(:gets).and_return("help")
+      self.stub(:gets).and_return("exit")
       help_output = capture_stdout { run(songs) }
       expect(help_output).to include("help" && "list" && "play" && "exit")
     end
 
     it "responds to 'exit'" do
+      self.stub(:gets).and_return("Michael")
       self.stub(:gets).and_return("exit")
       exit_output = capture_stdout { run(songs) }
       expect(exit_output).to include("Goodbye")
