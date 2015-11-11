@@ -10,7 +10,7 @@ songs = [
   "Amos Lee - Keep It Loose, Keep It Tight"
 ]
 
-=begin
+
 def help_output
   help_output = [
     "I accept the following commands:",
@@ -20,13 +20,11 @@ def help_output
     "- exit : exits this program"
   ]
 end
-=end
+
 
 def run(songs)
-
   #while true do
     puts "Please enter a command:"
-    #ARGV.clear
     command = gets.chomp
     case command
       when "help"
@@ -49,14 +47,9 @@ def exit_jukebox
 end
 
 def help
-  #help_output.each do |x|
-  #  puts x
-  #end
-  puts "I accept the following commands:"
-  puts  "- help : displays this help message"
-  puts  "- list : displays a list of songs you can play"
-  puts  "- play : lets you choose a song to play"
-  puts  "- exit : exits this program"
+  help_output.each do |x|
+    puts x
+  end
 end
 
 def list(songs)
@@ -67,7 +60,6 @@ end
 
 def play(songs)
   puts "Please enter a song name or number:"
-  #ARGV.clear
   input = gets.chomp
   if (1..9).include? input.to_i
     puts "Playing #{songs[input.to_i-1]}"
