@@ -1,3 +1,5 @@
+require 'pry'
+
 songs = [
   "Phoenix - 1901",
   "Tokyo Police Club - Wait Up",
@@ -19,7 +21,7 @@ songs = [
 
 # puts say_hello(users_name)
 
-def help 
+def help
   puts "I accept the following commands:"
   puts "- help : displays this help message"
   puts "- list : displays a list of songs you can play"
@@ -51,7 +53,7 @@ def play (songs)
     else
       puts "Invalid input, please try again"
       return false
-    end  
+    end
   end
   songs.each do |song_name|
     if selection.downcase == song_name.downcase
@@ -63,18 +65,19 @@ def play (songs)
   return false
 end
 
-def exit_jukebox 
+def exit_jukebox
   puts "Goodbye"
 end
 
-def run (songs)
-  #help
+def run(songs)
+  help
   selection = ""
-  unless selection == "exit"
+  loop do
     puts "Please enter a command:"
     selection = gets.chomp
     case selection
       when "help"
+        # binding.pry
         help
       when "list"
         list(songs)
@@ -82,6 +85,7 @@ def run (songs)
         play(songs)
       when "exit"
         exit_jukebox
+        break
       else
         puts "I didn't get that, please use 'help' to see a list of valid commands"
     end
