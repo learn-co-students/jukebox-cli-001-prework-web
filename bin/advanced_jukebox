@@ -1,9 +1,10 @@
+#!/usr/bin/env ruby
 require_relative "../lib/advanced_jukebox"
 
 
 my_songs = {
-"Go Go GO" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/01.mp3',
-"LiberTeens" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/02.mp3',
+"Go Go GO" => '/jukebox-cli-001-prework-web/audio/Emerald-Park/01.mp3',
+"LiberTeens" => '/jukebox-cli/audio/Emerald-Park/02.mp3',
 "Hamburg" =>  '< path to this directory >/jukebox-cli/audio/Emerald-Park/03.mp3',
 "Guiding Light" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/04.mp3',
 "Wolf" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/05.mp3',
