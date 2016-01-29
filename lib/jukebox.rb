@@ -51,6 +51,7 @@ def exit_jukebox
 end
 
 def run(songs)
+  help
   selection = ""
   while selection
     puts "Please enter a command:"
@@ -70,3 +71,6 @@ def run(songs)
     end
   end
 end
+
+
+run(songs)
