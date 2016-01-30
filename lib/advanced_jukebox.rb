@@ -49,7 +49,7 @@ def play(my_songs)
     if number_song.include?(song_choice)
       puts "Playing #{number_song}"
       file_to_open = my_songs[number_song]
-      puts "file path is #{file_to_open}"
+      # puts "file path is #{file_to_open}"
       system 'open #{file_to_open}'
       return "#{number_song}"
     end
