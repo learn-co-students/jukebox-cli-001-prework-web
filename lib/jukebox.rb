@@ -47,18 +47,23 @@ def run(songs)
   help 
   response = ""
 
-  until response == "exit" do
+    while response 
     puts "Please enter a command:"
     response = gets.chomp
-    if response == "help"
+
+    case response
+    when "help"
       help
-    elsif response == "list"
+    when "list"
       list(songs)
-    elsif response == "play"
+    when "play"
       play(songs)
-    elsif response == exit
+    when "exit"
       exit_jukebox
-    end
+      break
+    else
+      help
   end
+end
 end
 
