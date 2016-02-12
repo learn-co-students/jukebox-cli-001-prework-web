@@ -55,7 +55,7 @@ When we run `ruby lib/jukebox.rb`, it's going to print out `Enter your name:`, t
 
 Now, go head and delete or comment out the code we just wrote. That was just for practice (and fun). Let's move on to the Jukebox.
 
-![Jukebox](https://camo.githubusercontent.com/fcdfb7f86db18e9a497747c8d6f4283a8a136f76/687474703a2f2f646c2e64726f70626f7875736572636f6e74656e742e636f6d2f732f6f7764666a69356c6a71756264686e2f323031342d30312d3239253230617425323031312e3130253230414d2e706e67)
+![Jukebox]()
 
 Your jukebox should respond to 4 commands: `help`, `play`, `list`, and `exit`.
 
