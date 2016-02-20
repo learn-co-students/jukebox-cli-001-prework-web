@@ -48,8 +48,7 @@ def play(my_songs)
     puts "Invalid input, please try again"
   else
     puts "Playing #{picked_song}"
-    song_location = my_songs[picked_song]
-    system 'xdg-open #{song_location}'
+    system "xdg-open #{my_songs[picked_song]}"
   end
 end
 
