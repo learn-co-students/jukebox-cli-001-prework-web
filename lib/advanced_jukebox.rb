@@ -2,19 +2,18 @@
 #make sure to edit the value of each key to replace < path to this directory >
 #with the correct path to this directory on your computer
 
-# my_songs = {
-# "Go Go GO" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/01.mp3',
-# "LiberTeens" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/02.mp3',
-# "Hamburg" =>  '< path to this directory >/jukebox-cli/audio/Emerald-Park/03.mp3',
-# "Guiding Light" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/04.mp3',
-# "Wolf" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/05.mp3',
-# "Blue" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/06.mp3',
-# "Graduation Failed" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/07.mp3'
-# }
+ my_songs = {
+ "Go Go GO" => '/Users/hlpolivy/Development/code/jukebox-cli/audio/Emerald-Park/01.mp3',
+ "LiberTeens" => '/Users/hlpolivy/Development/code/jukebox-cli/audio/Emerald-Park/02.mp3',
+ "Hamburg" =>  '/Users/hlpolivy/Development/code/jukebox-cli/audio/Emerald-Park/03.mp3',
+ "Guiding Light" => '/Users/hlpolivy/Development/code/jukebox-cli/audio/Emerald-Park/04.mp3',
+ "Wolf" => '/Users/hlpolivy/Development/code/jukebox-cli/audio/Emerald-Park/05.mp3',
+ "Blue" => '/Users/hlpolivy/Development/code/jukebox-cli/audio/Emerald-Park/06.mp3',
+ "Graduation Failed" => '/Users/hlpolivy/Development/code/jukebox-cli/audio/Emerald-Park/07.mp3'
+ }
 
 def help
   #this method should be the same as in jukebox.rb
-
 end
 
 
