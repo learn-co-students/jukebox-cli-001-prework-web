@@ -2,7 +2,7 @@ require_relative "../lib/advanced_jukebox"
 
 
 my_songs = {
-"Go Go GO" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/01.mp3',
+"Go Go GO" => '/Users/MacBiers/Development/the_flat_iron_learn/jukebox-cli/audio/Emerald-Park/01.mp3',
 "LiberTeens" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/02.mp3',
 "Hamburg" =>  '< path to this directory >/jukebox-cli/audio/Emerald-Park/03.mp3',
 "Guiding Light" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/04.mp3',
@@ -10,5 +10,22 @@ my_songs = {
 "Blue" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/06.mp3',
 "Graduation Failed" => '< path to this directory >/jukebox-cli/audio/Emerald-Park/07.mp3'
 }
+
+system '/Users/MacBiers/Development/the_flat_iron_learn/jukebox-cli/audio/Emerald-Park/01.mp3'
+
+def play(my_songs)
+  list(songs)
+  puts
+  puts "What song do you want to play. Enter song name or number"
+  song_pick = gets.chomp.downcase
+  # songs.each_with_index do |song,index|
+    if songs.include?(song_pick) 
+      puts "Now playing song #{song_pick}"
+    elsif songs[song_pick.to_i - 1] 
+      puts "Now playing #{songs[song_pick.to_i - 1]}"
+    else
+      puts "Invalid input. Please try again!"
+    end
+end
 
 run(my_songs)

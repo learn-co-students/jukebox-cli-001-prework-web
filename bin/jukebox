@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+#This tells ruby to run this file without typing ruby 'file name'
 
 require_relative "../lib/jukebox"
 
