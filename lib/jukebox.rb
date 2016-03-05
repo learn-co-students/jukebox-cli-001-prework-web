@@ -30,26 +30,33 @@ def play(songs)
   list(songs)
   puts
   puts "What song do you want to play. Enter song name or number"
-  song_pick = gets.chomp.downcase
-  # songs.each_with_index do |song,index|
-    if songs.include?(song_pick) 
-      puts "Now playing song #{song_pick}"
-    elsif songs[song_pick.to_i - 1] 
-      puts "Now playing #{songs[song_pick.to_i - 1]}"
-    else
-      puts "Invalid input. Please try again!"
+  song_pick = gets.chomp
+  songs.each_with_index do |song,index|
+    if song_pick.to_i.is_a?(Integer)
+      puts "Now playing #{songs[song_pick.to_i] - 1}"
     end
+
+    #  if songs.include?(song_pick) 
+    #   puts "Now playing song #{song_pick}"
+    #   break
+    # elsif song_pick.to_i.is_a?(Integer)
+    #   puts "Now playing #{songs[song_pick.to_i - 1]}"
+    #   break
+    # else
+    #   puts "Invalid input, please try again"
+    # end
+  end
 end
 
+play songs
 
 def exit_jukebox
   puts "Goodbye"
 end
 
 def run(songs)
-  help
-  puts  
-  puts "Please make a selection"
+  help 
+  puts "Please enter a command:"
   choice = gets.chomp
   until choice == 'exit'
     case choice
@@ -61,9 +68,8 @@ def run(songs)
     when 'play'
       play(songs)
     else
-      puts 'That is not a option! Try Again.'
+      puts 'Invalid input, please try again'
     end
-  puts
   puts "Please make a selection"
   choice = gets.chomp
   end
