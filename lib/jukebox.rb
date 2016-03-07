@@ -7,7 +7,7 @@ songs = [
   "The Cults - Abducted",
   "Phoenix - Consolation Prizes",
   "Harry Chapin - Cats in the Cradle",
-  "Amos Lee - Keep It Loose, Keep It Tight"
+  "Amos Lee8 - Keep It Loose, Keep It Tight"
 ]
 
 
@@ -31,24 +31,22 @@ def play(songs)
   puts
   puts "What song do you want to play. Enter song name or number"
   song_pick = gets.chomp
-  songs.each_with_index do |song,index|
-    if song_pick.to_i.is_a?(Integer)
-      puts "Now playing #{songs[song_pick.to_i] - 1}"
+  if song_pick.to_i.is_a?(Integer) && song_pick.to_i != 0
+    if song_pick.length == 1
+    puts songs[song_pick.to_i - 1]
+    else
+      puts 'Invalid input, please try again'
     end
-
-    #  if songs.include?(song_pick) 
-    #   puts "Now playing song #{song_pick}"
-    #   break
-    # elsif song_pick.to_i.is_a?(Integer)
-    #   puts "Now playing #{songs[song_pick.to_i - 1]}"
-    #   break
-    # else
-    #   puts "Invalid input, please try again"
-    # end
+  else
+    if songs.include?(song_pick)
+      puts songs.find {|song| song == song_pick}
+    else
+      puts 'Invalid input, please try again'
+    end
   end
 end
 
-play songs
+# play songs
 
 def exit_jukebox
   puts "Goodbye"
@@ -70,7 +68,7 @@ def run(songs)
     else
       puts 'Invalid input, please try again'
     end
-  puts "Please make a selection"
+  puts "Please make a selection help, list, or play."
   choice = gets.chomp
   end
 exit_jukebox
