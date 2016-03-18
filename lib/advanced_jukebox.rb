@@ -13,15 +13,18 @@
 # }
 
 def help
-  #this method should be the same as in jukebox.rb
-
+  puts "I accept the following commands:",
+    "- help : displays this help message",
+    "- list : displays a list of songs you can play",
+    "- play : lets you choose a song to play",
+    "- exit : exits the program"
 end
 
 
 
 def list(my_songs)
-  #this method is different! Collect the keys of the my_songs hash and 
-  #list the songs by name
+  songs = my_songs.keys
+  songs.each{|song| puts song}
 end
 
 
@@ -33,13 +36,42 @@ def play(my_songs)
   #if it isn't, tell them their choice is invalid
   #if it is, play the song using the system 'open <file path>' syntax
   #get the file path of the song by looking it up in the my_songs hash
-  
+  picked_song = nil
+  puts "Please enter a song name:"
+  input = gets.chomp
+  my_songs.keys.each do |song|
+    if input == song
+      picked_song = song
+    end
+  end
+  if picked_song == nil
+    puts "Invalid input, please try again"
+  else
+    puts "Playing #{picked_song}"
+    system "xdg-open #{my_songs[picked_song]}"
+  end
 end
 
 def exit_jukebox
-  #this method is the same as in jukebox.rb
+  puts "Goodbye"
 end
 
-def run(my_songs)
-  #this method is the same as in jukebox.rb
+def run(songs)
+  help
+  input = nil
+  while input != "exit"
+    puts "Please enter a command:"
+    input = gets.chomp
+    case
+    when input == "help"
+      help
+    when input == "list"
+      list(songs)
+    when input == "play"
+      play(songs)
+    else
+      puts "Invalid input, please try again"
+    end
+  end
+  exit_jukebox
 end
