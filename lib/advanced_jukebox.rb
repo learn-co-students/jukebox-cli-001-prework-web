@@ -2,15 +2,7 @@
 #make sure to edit the value of each key to replace < path to this directory >
 #with the correct path to this directory on your computer
 
-my_songs = {
-"Go Go GO" => '/Users/eunmi/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/01.mp3',
-"LiberTeens" => '/Users/eunmi/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/02.mp3',
-"Hamburg" =>  '/Users/eunmi/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/03.mp3',
-"Guiding Light" => '/Users/eunmi/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/04.mp3',
-"Wolf" => '/Users/eunmi/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/05.mp3',
-"Blue" => '/Users/eunmi/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/06.mp3',
-"Graduation Failed" => '/Users/eunmi/Development/code/jukebox-cli-001-prework-web/audio/Emerald-Park/07.mp3'
-}
+
 
 def help
   #this method should be the same as in jukebox.rb
@@ -61,6 +53,12 @@ def play(my_songs)
 end
 
 
+
+def exit_jukebox
+  #this method is the same as in jukebox.rb
+puts "Goodbye"
+
+end
 
 
 def run(my_songs)
