@@ -79,4 +79,3 @@ describe "CLI Jukebox" do
     end
   end
 end
-
