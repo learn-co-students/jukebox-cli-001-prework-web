@@ -21,7 +21,7 @@ end
 
 #----------  Plays Song ---------#
 def play(songs)
-  puts "please enter a song name or number:"
+  puts "Please enter a song name or number:"
   input = gets.chomp
   song = ''
   songs.each_with_index do |item, index|
@@ -67,7 +67,7 @@ def run(songs)
       else input == "play"
         play(songs)
         puts "Please enter a command:"
-        input = gets.chomp
+        input = gets.stub
       end
     end
     exit_jukebox
