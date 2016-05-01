@@ -51,21 +51,26 @@ end
 
 #----------  Run Jukebox Program ---------#
 def run(songs)
+  help
   puts "Please enter a command:"
   input = gets.chomp
 
-    if input != exit
+    while input != "exit" do
       if input == "list"
         list(songs)
+        puts "Please enter a command:"
+        input = gets.chomp
       elsif input == "help"
         help
+        puts "Please enter a command:"
+        input = gets.chomp
       else input == "play"
         play(songs)
+        puts "Please enter a command:"
+        input = gets.chomp
       end
-    else
-      exit_jukebox
     end
-
+    exit_jukebox
 end
 
 
