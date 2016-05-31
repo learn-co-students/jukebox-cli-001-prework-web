@@ -1,4 +1,5 @@
-require "pry"
+# require "pry"
+
 my_songs = {
 "Go Go GO" => '/home/fidelscodes/code/labs/jukebox-cli-001-prework-web/audio/Emerald-Park/01.mp3',
 "LiberTeens" => '/home/fidelscodes/code/labs/jukebox-cli-001-prework-web/audio/Emerald-Park/02.mp3',
@@ -42,7 +43,6 @@ def play(my_songs)
 
   if my_songs.has_key?(response)
     system "open #{my_songs[response]}"
-    binding.pry
   else
     puts "You entered an invalid song name. Try again."
   end
