@@ -62,9 +62,7 @@ describe "CLI Jukebox" do
       expect { run(songs) }.to output(/Please enter a command:/).to_stdout
     end
   end
-
-  end
-
+end
   context "with commands" do
     it "responds to 'help'" do
       self.stub(:gets).and_return("help", "exit")
