@@ -19,8 +19,8 @@ def help
 end
 
 def list(songs)
-  songs.each_with_index { |i, song|
-    puts "#{i}. #{song}"
+  songs.each_with_index { |song, i|
+    puts "#{i+1}. #{song}"
   }
 end
 
@@ -64,11 +64,11 @@ def run(songs)
     usrcmd = gets.chomp
     case usrcmd
     when "list"
-      list
+      list(songs)
     when "help"
       help
     when "play"
-      play
+      play(songs)
     when "exit"
       exit_jukebox
       going = false
@@ -76,5 +76,5 @@ def run(songs)
   end
 end
 
-#run([])
-
+run songs
+#list(songs)
