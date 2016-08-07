@@ -14,32 +14,65 @@
 
 def help
   #this method should be the same as in jukebox.rb
-
+  puts "I accept the following commands:"
+  puts "- help : displays this help message"
+  puts "- list : displays a list of songs you can play"
+  puts "- play : lets you choose a song to play"
+  puts "- exit : exits this program"
 end
 
 
 
 def list(my_songs)
-  #this method is different! Collect the keys of the my_songs hash and 
+  #this method is different! Collect the keys of the my_songs hash and
   #list the songs by name
+  my_songs.keys.each_with.index {|k,v| puts "#{v+1}. #{k}"}
 end
 
 
-def play(my_songs)
-  #this method is slightly different!
-  #you should still ask the user for input and collect their song choice
-  #this time, only allow user's to input a song name
-  #check to see if the name they give is in fact a key of the my_songs hash
-  #if it isn't, tell them their choice is invalid
-  #if it is, play the song using the system 'open <file path>' syntax
-  #get the file path of the song by looking it up in the my_songs hash
-  
+def play(songs_array)
+  puts "Please enter a song name or number:"
+  song_name_array = songs_array.collect {|k| k.upcase}
+  answer = gets.chomp
+
+  if answer.to_i.between?(1,9)
+    #number processing
+    song_index = answer.to_i - 1
+    puts "Playing #{songs_array[song_index]}"
+
+  elsif song_name_array.include?(answer.upcase)
+    #name processing
+    puts "Playing #{answer}"
+
+  else puts "Invalid input, please try again"
+  end
 end
 
 def exit_jukebox
-  #this method is the same as in jukebox.rb
+  puts "Goodbye"
 end
 
-def run(my_songs)
-  #this method is the same as in jukebox.rb
+def run(songs_array)
+  help
+  puts "Please enter a command:"
+  answer = gets.chomp
+
+  while answer.downcase != "exit" do
+
+    case answer.downcase
+      when "help"
+        help
+        puts "Please enter a command:"
+        answer = gets.chomp
+      when "list"
+        list(songs_array)
+        puts "Please enter a command:"
+        answer = gets.chomp
+      when "play"
+        play(songs_array)
+        puts "Please enter a command:"
+        answer = gets.chomp
+    end
+  end
+  exit_jukebox
 end
