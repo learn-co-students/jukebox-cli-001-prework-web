@@ -23,6 +23,19 @@ describe "CLI Jukebox" do
     end
 
     describe '#play' do
+
+      #practice suite
+      it "can output content that matches with" do
+      allow(self).to receive(:gets).and_return("Phoenix - 1901")
+      expect{ play(songs) }.to output(/Phoenix - 1901/).to_stdout
+      end
+
+      #practice suite
+       it "can find a song when only one word matches with the input" do
+      allow(self).to receive(:gets).and_return("Phoenix")
+      expect{ play(songs) }.to output(/Phoenix - 1901/).to_stdout
+      end
+
       it "can find a song when given a number from the user" do
           allow(self).to receive(:gets).and_return("1")
           expect { play(songs) }.to output(/Phoenix - 1901/).to_stdout
