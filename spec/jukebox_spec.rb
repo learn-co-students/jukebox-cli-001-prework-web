@@ -21,6 +21,13 @@ describe "CLI Jukebox" do
         expect { help }.to output(/^(?=.*help)(?=.*list)(?=.*play)(?=.*exit).+/m).to_stdout
       end
     end
+    
+    describe "#list" do
+      it "lists out the available songs" do  
+        expect { list(songs) }.to output(/1. Phoenix - 1901/).to_stdout
+        expect { list(songs) }.to output(/2. Tokyo Police Club - Wait Up/).to_stdout
+      end
+    end
 
     describe '#play' do
       it "can find a song when given a number from the user" do
@@ -41,12 +48,6 @@ describe "CLI Jukebox" do
       it 'returns an error when given a name that does not correspond to an existing song' do
         allow(self).to receive(:gets).and_return("Blah blah foo blah")
         expect { play(songs) }.to output(/Invalid input, please try again/).to_stdout
-      end
-    end
-
-    describe "#list" do
-      it "lists out the available songs" do  
-        expect { list(songs) }.to output(/Phoenix - 1901/).to_stdout
       end
     end
 
