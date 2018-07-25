@@ -10,3 +10,53 @@ songs = [
   "Amos Lee - Keep It Loose, Keep It Tight"
 ]
 
+def help
+  puts "I accept the following commands:"
+  puts " - help : displays this help message"
+  puts " - list : displays a list of songs you can play"
+  puts " - play : lets you choose a song to play"
+  puts " - exit : exits this program"
+end
+
+def list(songs)
+  songs.each_with_index do |x, y|
+    puts "#{y + 1}. #{x}"
+  end
+end
+
+def play(songs)
+  puts "Please enter a song name or number:"
+  input = gets.chomp
+  if songs.include?(input) == true
+    puts "Playing #{input}"
+  elsif input.to_i > 0 && input.to_i < 10
+    puts "Playing #{songs[input.to_i - 1]}"
+  else
+    puts "Invalid input, please try again"
+  end
+end
+
+def exit_jukebox
+  puts "Goodbye"
+end
+
+def run(songs)
+  loop do
+  help
+  puts "Please enter a command:"
+  input = gets.chomp
+    if input == "exit"
+      exit_jukebox
+      break
+    elsif input == "play"
+      play(songs)
+    elsif input == "list"
+      list(songs)
+    elsif input == "help"
+      next
+    else
+      puts "Invalid input, please try again"
+      next
+    end
+  end
+end
